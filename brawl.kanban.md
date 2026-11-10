@@ -6,11 +6,12 @@
 
 ## To Do
 
-#### Planera och skriv dina kort
-<!-- id: task-1793100000001-1 -->
-planering.md: ditt spel, planen och dina kort. Lägg in korten här. Visa läraren innan du skriver kod
-<!-- priority: critical -->
-<!-- source: planering.md:1 -->
+#### Lägga till lite animationer kanske
+<!-- id: task-1794303704878-89 -->
+
+#### Lägga till motståndare
+<!-- id: task-1794303583079-52 -->
+<!-- priority: high -->
 
 #### Krav: spelet börjar
 <!-- id: task-1793100000002-2 -->
@@ -42,6 +43,16 @@ rubrikerna längst ner i readme.md. faser.md fylls i längs vägen och blir klar
 ## In Progress
 
 ## Done
+
+#### Fixa spelarens rörelse
+<!-- id: task-1794303548613-35 -->
+<!-- priority: high -->
+
+#### Planera och skriv dina kort
+<!-- id: task-1793100000001-1 -->
+planering.md: ditt spel, planen och dina kort. Lägg in korten här. Visa läraren innan du skriver kod
+<!-- priority: critical -->
+<!-- source: planering.md:1 -->
 
 #### Forka repot
 <!-- id: task-1793100000000-0 -->
