@@ -6,13 +6,6 @@
 
 ## To Do
 
-#### Lägga till lite animationer kanske
-<!-- id: task-1794303704878-89 -->
-
-#### Lägga till motståndare
-<!-- id: task-1794303583079-52 -->
-<!-- priority: high -->
-
 #### Krav: spelet börjar
 <!-- id: task-1793100000002-2 -->
 namnet frågas efter, båda har HP och startvärdena syns. För stort för ett pass, dela upp det i dina egna kort
@@ -41,6 +34,13 @@ rubrikerna längst ner i readme.md. faser.md fylls i längs vägen och blir klar
 <!-- source: faser.md:1 -->
 
 ## In Progress
+
+#### Lägga till lite animationer kanske
+<!-- id: task-1794303704878-89 -->
+
+#### Lägga till motståndare
+<!-- id: task-1794303583079-52 -->
+<!-- priority: high -->
 
 ## Done
 

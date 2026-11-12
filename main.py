@@ -1,7 +1,6 @@
 import random
 import sys
 import time
-from pynput import keyboard
 
 # Startvärdena väljer du själv.
 spelare_hp = 100
@@ -31,48 +30,48 @@ en = [
     r"     /0\  ",
     r"    _\ |_ "
 ]
-currentdir = 0
-playerx = 10
 
-def render(x, ex):
+def render(x, ex, y):
+    global spelare_hp, fiende_hp
     clear()
+    sys.stdout.write(f"hp: {spelare_hp}")
+    for i in range(0, 20 - (4 + len(str(spelare_hp)))):
+        sys.stdout.write(" ")
+    sys.stdout.write(f"fiende hp: {fiende_hp}")
+    sys.stdout.write("\n")
     for a in range(4):
         for b in range(x):
             sys.stdout.write(" ")
-       
+
+        if y == 1 and a == 1:
+            sys.stdout.write(" ")
         sys.stdout.write(char[a])
 
-        for b in range(ex + 20 - x):
-            sys.stdout.write(" ")
-
-        sys.stdout.write(en[a])
+        if y == 1 and a == 1:
+            for b in range(ex + 19 - x):
+                sys.stdout.write(" ")
+        else:
+            for b in range(ex + 20 - x):
+                sys.stdout.write(" ")
+        if y != 3:
+            sys.stdout.write(en[a])
 
         sys.stdout.write("\n")
     sys.stdout.flush()
 
-
-def on_press(key):
-    global currentdir
-    if key == keyboard.Key.left:
-        currentdir = -1
-    if key == keyboard.Key.right:
-        currentdir = 1
-
-def on_release(key):
-    global currentdir
-    if key in (keyboard.Key.left, keyboard.Key.right):
-        currentdir = 0
-
-listener = keyboard.Listener(on_press=on_press, on_release=on_release)
-listener.start()
-
-
-while True:
-    print(currentdir)
-    if currentdir == 1 and playerx < 30:
-        playerx += 1
-    elif currentdir == -1 and playerx > 0:
-        playerx -= 1
-    render(playerx, 0)
-    print(playerx)
-    time.sleep(0.05)
+def anim(x):
+    if x == 0:
+        for i in range(0, 10):
+            render(10 + i, 0, 0)
+            time.sleep((1.2 ** i)/10)
+        for i in range(1, 3):
+            render(19, 0, 1)
+            time.sleep(0.2)
+            render(19, 0, 0)
+            time.sleep(0.2)
+        for i in range(1, 3):
+            render(19, 0, 3)
+            time.sleep(0.4)
+            render(19, 0, 0)
+            time.sleep(0.4)
+anim(0)

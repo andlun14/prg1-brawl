@@ -1,7 +1,13 @@
+import random
 import sys
 import time
 from pynput import keyboard
 
+# Startvärdena väljer du själv.
+spelare_hp = 100
+fiende_hp = 80
+
+# Ditt första kort börjar här.
 
 def slowPrint(string, speed=0.075):
     for char in string:
@@ -19,15 +25,28 @@ char = [
     r"  /O\     ",
     r" _| /_    "
 ]
+en = [
+    r"     ^o´  ",
+    r"---+_/0\/^",
+    r"     /0\  ",
+    r"    _\ |_ "
+]
 currentdir = 0
 playerx = 10
 
-def render(x):
+def render(x, ex):
+    clear()
     for a in range(4):
         for b in range(x):
             sys.stdout.write(" ")
        
         sys.stdout.write(char[a])
+
+        for b in range(ex + 20 - x):
+            sys.stdout.write(" ")
+
+        sys.stdout.write(en[a])
+
         sys.stdout.write("\n")
     sys.stdout.flush()
 
@@ -49,12 +68,12 @@ listener.start()
 
 
 while True:
-    #print(currentdir)
-    clear()
-    if currentdir == 1 and playerx < 20:
+    print(currentdir)
+    if currentdir == 1 and playerx < 30:
         playerx += 1
     elif currentdir == -1 and playerx > 0:
         playerx -= 1
-    render(playerx)
+    render(playerx, 0)
     print(playerx)
-    time.sleep(0.1)
+    time.sleep(0.05)
+
